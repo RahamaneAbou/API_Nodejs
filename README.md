@@ -43,7 +43,7 @@ npm start
 ```
 ou en mode développement :
 ```bash
-npm run dev ou nmp run start
+npm run dev ou npm run start
 ```
 
 ---
