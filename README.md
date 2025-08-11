@@ -22,7 +22,7 @@ Et on Options en plus qui sont **La recherche et les statistique**
 1. **Cloner le projet**
 ```bash
 git clone https://github.com/RahamaneAbou/API_Nodejs.git
-cd ton-repo
+cd API_Node
 ```
 
 2. **Installer les dépendances**
@@ -43,7 +43,7 @@ npm start
 ```
 ou en mode développement :
 ```bash
-npm run dev
+npm run dev ou nmp run start
 ```
 
 ---
