@@ -1,6 +1,6 @@
-const Client = require('../models/Client');
-const Service = require('../models/Services');
-const Transaction = require('../models/Transaction');
+const Client = require('../models/client');
+const Service = require('../models/services');
+const Transaction = require('../models/transaction');
 
 exports.getStatistics = async (req, res) => {
   try {
