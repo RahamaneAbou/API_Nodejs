@@ -21,8 +21,8 @@ Et on Options en plus qui sont **La recherche et les statistique**
 
 1. **Cloner le projet**
 ```bash
-git clone https://github.com/ton-repo.git
-cd ton-repo
+git clone https://github.com/RahamaneAbou/API_Nodejs.git
+cd API_Node
 ```
 
 2. **Installer les dépendances**
@@ -34,7 +34,7 @@ npm install
 Créer un fichier `.env` à la racine avec :
 ```
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/nom_de_la_base
+MONGO_URI=mongodb+srv://azougoulrich:6MGSnixm8eFU5yor@cluster0.fpv9rdu.mongodb.net/evaluation_finale?retryWrites=true&w=majority&appName=Cluster0
 ```
 
 4. **Démarrer le serveur**

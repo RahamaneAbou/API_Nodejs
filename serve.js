@@ -15,7 +15,35 @@ const transactionRoutes = require('./routes/transactionsRoutes');
 
 const rateLimit = require('express-rate-limit');
 
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+
 const routesSearch = require('./routes/search');
+// Configuration de Swagger
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "API Clients",
+      version: "1.0.0",
+      description: "Documentation de l'API Clients",
+    },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
+    },
+  },
+  apis: ["./routes/*.js"], 
+};
+
+const swaggerSpec = swaggerJsdoc(options);
+
+
 // la configuration de CORS pour autoriser les requêtes depuis le frontend
 app.use(cors({
   origin: 'http://localhost',  // l'url de mon frontend a la place de localhost
@@ -31,6 +59,7 @@ const limiteFonction = rateLimit({
   legacyHeaders: false, 
   // chaque ip ne peut faire que 100 requêtes toutes les 15 minutes
 });
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/api/search', routesSearch);
 app.use('/api/stats', statsRoutes);
 app.use(limiteFonction);
